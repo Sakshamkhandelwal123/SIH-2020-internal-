@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+  <style>
+    .dsa{
+      background-image: url("https://images.unsplash.com/photo-1508717334315-37b159f24d04?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-bottom: 0px;
+    }
+  </style>
+  <body>
+    
+    <center class="dsa"><h1>{{ title }}</h1></center>
+    <hr>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }} </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </body>
+</html>
